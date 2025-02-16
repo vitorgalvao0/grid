@@ -1,0 +1,32 @@
+@import url(reset.css);
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url(components/content.css);
+@import url(components/footer.css);
+@import url(components/navbar.css);
+@import url(components/sidebar.css);
+@import url(pages/tabela.css);
+@import url(pages/produtos.css);
+
+
+
+body {
+    font-family: "Montserrat", sans-serif;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: 68px 1fr 22px;
+}
+
+h1 {
+    margin: 20px 0;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 1.2rem;
+}
+
+@media screen and (max-width: 490px) {
+    body{
+        grid-template-columns: 1fr;
+        grid-template-rows: 48px 1fr 22px;
+    }
+}

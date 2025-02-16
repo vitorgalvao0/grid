@@ -1,0 +1,28 @@
+header {
+    width: calc(100vw - 200px);
+    /* height: 68px; */
+    background-color: #e0dfb1;
+    /* position: fixed;
+    right: 0; */
+    grid-column: 2;
+    grid-row: 1;
+
+    .navbar{
+        height: 100%;
+        display: flex;
+    }
+    img {
+        position: relative;
+        margin: 0 auto;
+        width: 50px;
+        object-fit: contain;
+    }
+}
+
+@media screen and (max-width: 490px) {
+    header {
+        width: 100vw;
+        grid-column: 1;
+    }
+    
+}

@@ -1,0 +1,20 @@
+
+table {
+  text-align: center;
+  margin: 0 auto;
+  width: 98%;
+
+  td {
+    padding: 5px;
+  }
+
+  th {
+    background-color: #000;
+    color: white;
+    padding: 7px;
+  }
+}
+
+tr:nth-child(even) {
+  background: #cac9b8;
+}
