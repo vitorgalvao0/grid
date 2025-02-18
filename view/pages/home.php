@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="/site-adm/view/assets/css/style.css">
+    <link rel="stylesheet" href="/vitorg/adm-site/view/assets/css/style.css">
 </head>
 
 <body>
@@ -13,7 +13,7 @@
     <?php require_once __DIR__ . '\..\components\sidebar.php' ?>    
 
     <main>
-        <h1 class="h1">Lorem</h1>
+        <h1>Lorem</h1>
         <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil repellendus fugit asperiores autem itaque veritatis ad odit nobis odio facilis explicabo nostrum quia facere, atque at vero animi molestiae sapiente?
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil repellendus fugit asperiores autem itaque veritatis ad odit nobis odio facilis explicabo nostrum quia facere, atque at vero animi molestiae sapiente?
