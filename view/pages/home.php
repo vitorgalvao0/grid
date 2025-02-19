@@ -13,7 +13,7 @@
     <?php require_once __DIR__ . '\..\components\sidebar.php' ?>    
 
     <main>
-        <h1>Lorem</h1>
+        <h1>Saiba mais</h1>
         <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil repellendus fugit asperiores autem itaque veritatis ad odit nobis odio facilis explicabo nostrum quia facere, atque at vero animi molestiae sapiente?
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil repellendus fugit asperiores autem itaque veritatis ad odit nobis odio facilis explicabo nostrum quia facere, atque at vero animi molestiae sapiente?

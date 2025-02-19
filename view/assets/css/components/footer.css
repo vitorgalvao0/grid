@@ -2,9 +2,6 @@ footer {
     width: calc(100vw - 200px);
     height: 22px;
     background-color: #71BBB2;
-    /* position: fixed;
-    right: 0;
-    bottom: 0; */
     grid-column: 2;
     grid-row: 3;
 
@@ -22,14 +19,14 @@ footer {
     }
 }
 
-@media screen and (max-width: 490px) {
-    footer {
-        width: 100vw;
-        grid-column: 1;
-    }
+a{
+    text-decoration: none;
+    width: 15px;
+    color: rgb(255, 255, 255);
+    padding-left: 5px;
+}
 
-    span {
-        font-size: 0.8rem; 
-    };
-    
+.avatar-img{
+    width: 15px;
+    color: #ffffff;
 }

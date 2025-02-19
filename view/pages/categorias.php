@@ -128,6 +128,7 @@ $categorias = [
                     <th>ID</th>
                     <th>Nome</th>
                     <th>Descrição</th>
+                    <th class="edit"></th>
                 </tr>
             </thead>
             <tbody>
@@ -136,6 +137,17 @@ $categorias = [
                         <td><?php echo $categoria['id'] ?></td>
                         <td><?php echo $categoria['nome'] ?></td>
                         <td><?php echo $categoria['descricao'] ?></td>
+                        <td>
+                            <!-- <form action="sem pasta" method="GET"> -->
+                                <!-- <input type="hidden" name="id" value="<?= $categoria->id; ?>"> -->
+                                    <button>
+                                        <span class="material-symbols-outlined">
+                                            edit
+                                        </span>
+                                    </button>
+                            <!-- </form> -->
+                        </td>
+                            
                     </tr>
                 <?php } ?>
             </tbody>

@@ -17,12 +17,3 @@ main {
     }
 }
 
-@media screen and (max-width: 490px) {
-    main {
-        width: 100vw;
-        height: calc(100vh - 48px - 22px);
-        top: 48px;
-        grid-column: 1;
-    }
-
-}

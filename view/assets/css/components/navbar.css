@@ -19,10 +19,3 @@ header {
     }
 }
 
-@media screen and (max-width: 490px) {
-    header {
-        width: 100vw;
-        grid-column: 1;
-    }
-    
-}

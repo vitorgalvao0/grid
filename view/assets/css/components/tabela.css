@@ -16,6 +16,7 @@ table {
 
   tr:hover{
     background-color: #D6BD98;
+    cursor: pointer;
   }
 }
 
