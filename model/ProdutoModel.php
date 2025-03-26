@@ -1,7 +1,7 @@
 <?php 
 class ProdutoModel{
 
-    public $produtos =[
+    private $produtos =[
         [
             'id' => '1',
             'nome' => 'iPhone 15 128GB - Smartphone de Alta Performance',
@@ -149,13 +149,18 @@ class ProdutoModel{
     }
 
     public function buscarPorId($id){
-        $array_filtrado = array_filter(
+       $indexProduto = -1;
+
+       $array_filtrado = array_filter(
             array: $this->produtos,
-            callback: function($produto) use($id){
+            callback: function($produto,$index) use($id, &$indexProduto){
                 if ($produto['id']==$id){
+                    $indexProduto = $index;
                     return $produto;
                 } 
             }
+            
         );
+        return $array_filtrado[$indexProduto];
     }
 }

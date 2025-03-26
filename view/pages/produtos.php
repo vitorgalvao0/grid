@@ -1,7 +1,7 @@
 <?php
-// require_once __DIR__ . '\..\model\ProdutoModel.php';
-// $produtoModel = new ProdutoModel;
-// $produtos = $produtoModel->listar()
+require_once __DIR__ . '\..\model\ProdutoModel.php';
+$ProdutoModel = new ProdutoModel;
+
 
 ?>
 
