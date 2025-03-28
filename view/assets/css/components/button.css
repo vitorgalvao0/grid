@@ -1,0 +1,6 @@
+.botoes-container{
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    gap: 2px;
+}

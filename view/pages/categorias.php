@@ -1,8 +1,8 @@
 <?php
+    require_once __DIR__ ."/../../model/CategoriaModel.php"; 
 
-
-
-
+    $categoriaModel = new CategoriaModel();
+    $categorias = $categoriaModel->listar();
 ?>
 
 <!DOCTYPE html>
@@ -11,7 +11,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Categorias</title>
+    <title>Categoria</title>
     <link rel="stylesheet" href="/vitorg/adm-site/view/assets/css/style.css">
 </head>
 <body>
@@ -19,32 +19,34 @@
     <?php require_once __DIR__ . '\..\components\sidebar.php'; ?>
 
     <main>
-        <h1>Categorias</h1>
+        <h1>Categoria</h1>
 
         <table class="table">
             <thead>
                 <tr>
                     <th>ID</th>
                     <th>Nome</th>
-                    <th>Descrição</th>
-                    <th class="edit"></th>
+                    <th class="edit">Ações</th>
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($nomes as $nome) { ?>
+                <?php foreach ($categorias as $categoria) { ?>
                     <tr>
                         <td><?php echo $categoria['id'] ?></td>
                         <td><?php echo $categoria['nome'] ?></td>
-                        <td><?php echo $categoria['descricao'] ?></td>
-                        <td>
-                            <!-- <form action="sem pasta" method="GET"> -->
-                                <!-- <input type="hidden" name="id" value="<?= $categoria->id; ?>"> -->
-                                    <button>
+                        <td class="botoes-container">
+                            <form action="editarCategoria.php" method="GET">
+                                <button class="botao">
                                         <span class="material-symbols-outlined">
-                                            edit
+                                            room_preferences
                                         </span>
-                                    </button>
-                            <!-- </form> -->
+                                </button>
+                            </form>
+                            <button class="botao">
+                                <span class="material-symbols-outlined">
+                                    delete
+                                </span>
+                            </button>
                         </td>
                             
                     </tr>
