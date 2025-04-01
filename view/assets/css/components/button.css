@@ -11,3 +11,12 @@
 .botao-excluir{
     background-color: rgb(226, 79, 79);
 }
+
+.form-button-add{
+    display: flex;
+    justify-content: space-around;
+    padding: 5px;
+}
+.form-add{
+    background-color: rgb(104, 223, 153);
+}

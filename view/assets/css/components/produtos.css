@@ -1,4 +1,4 @@
-.produtos{
+/* .produtos{
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
@@ -33,4 +33,4 @@
 .produto:hover {
     background-color: #a6b49eb4;
     transform: scale(1.03);
-}
+} */

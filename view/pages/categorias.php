@@ -2,7 +2,7 @@
     require_once __DIR__ ."/../../model/CategoriaModel.php"; 
 
     $categoriaModel = new CategoriaModel();
-    $categorias = $categoriaModel->listar();
+    $categorias = $categoriaModel->listar();    
 ?>
 
 <?php require_once __DIR__ . '\..\components\head.php'; ?>
@@ -12,6 +12,14 @@
 
     <main>
         <h1>Categoria</h1>
+
+        <form class="form-button-add" action="salvarCategoria.php" method="get">
+                <button class="button-add" type="submit" class="botao-excluir">
+                    <span class="material-symbols-outlined">
+                        add novo
+                    </span>
+                </button>
+        </form>
 
         <table class="table">
             <thead>
@@ -29,19 +37,20 @@
                         <td class="botoes-container">
                             <form action="editarCategoria.php" method="GET">
                                 <input type="hidden" name="id" value="<?= $categoria['id']; ?>">
-                                <button class="botao-salvar">
-                                        <span class="material-symbols-outlined">
-                                            room_preferences
-                                        </span>
-                                </button>
+                                    <button class="botao-salvar">
+                                            <span class="material-symbols-outlined">
+                                                room_preferences
+                                            </span>
+                                    </button>
                             </form>
 
-                            <form action="">
-                                <button class="botao-excluir">
-                                    <span class="material-symbols-outlined">
-                                        delete
-                                    </span>
-                                </button>
+                            <form action="excluirCategoria.php" method="POST" onsubmit="return confirm('Tem certeza que deseja excluir esta categoria?');">
+                                <input type="hidden" name="id" value="<?= $categoria['id']; ?>"> 
+                                    <button type="submit" class="botao-excluir">
+                                        <span class="material-symbols-outlined">
+                                            delete
+                                        </span>
+                                    </button>
                             </form>
                         </td>    
                     </tr>
