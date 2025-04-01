@@ -20,4 +20,15 @@ class UsuarioModel{
 
         return $stmt->fetchAll();
     }
+
+    public function buscarPorIdUsuario($id){
+        $query = "SELECT * FROM $this->tabela WHERE id = :id";
+
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(":id", $id);
+        $stmt->execute();
+
+        return $stmt->fetch();
+
+    }
 }

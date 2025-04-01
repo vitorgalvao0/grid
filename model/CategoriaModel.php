@@ -26,27 +26,12 @@ class CategoriaModel{
         $query = "SELECT * FROM $this->tabela WHERE id = :id";
 
         $stmt = $this->conn->prepare($query);
-        $stmt->bindParam("id", $id);
+        $stmt->bindParam(":id", $id);
         $stmt->execute();
 
         return $stmt->fetch();
 
     }
-    // public function buscarPorId($id){
-    //    $indexCategoria = -1;
-       
-    //    $array_filtrado = array_filter(
-    //         array: $this->nome,
-    //         callback: function($categoria,$index) use($id, &$indexCategoria){
-    //             if ($categoria['id']==$id){
-    //                 $indexCategoria = $index;
-    //                 return $categoria;
-    //             } 
-    //         }
-            
-    //     );
-    //     return $array_filtrado[$indexCategoria];
-    // }
 }
 
 

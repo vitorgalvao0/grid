@@ -20,20 +20,15 @@ class ProdutoModel{
 
         return $stmt->fetchAll();
     }
+    public function buscarPorIdProduto($id){
+        $query = "SELECT * FROM $this->tabela WHERE id = :id";
 
-    // public function buscarPorId($id){
-    //    $indexProduto = -1;
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(":id", $id);
+        $stmt->execute();
 
-    //    $array_filtrado = array_filter(
-    //         array: $this->produtos,
-    //         callback: function($produto,$index) use($id, &$indexProduto){
-    //             if ($produto['id']==$id){
-    //                 $indexProduto = $index;
-    //                 return $produto;
-    //             } 
-    //         }
-            
-    //     );
-    //     return $array_filtrado[$indexProduto];
-    // }
+        return $stmt->fetch();
+
+    }
+    
 }

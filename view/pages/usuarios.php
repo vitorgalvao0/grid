@@ -29,7 +29,7 @@
                     <th>Telefone</th>
                     <th>Data Nascimento</th>
                     <th>CPF</th>
-                    <th>Gênero</th>
+                    <th class="edit">Ações</th>
                 </tr>
             </thead>
             <tbody>
@@ -39,9 +39,26 @@
                         <td><?php echo $usuario['nome'] ?></td>
                         <td><?php echo $usuario['email'] ?></td>
                         <td><?php echo $usuario['telefone'] ?></td>
-                        <td><?php echo $usuario['data_nascimento'] ?></td>
+                        <td><?php echo $usuario['datanascimento'] ?></td>
                         <td><?php echo $usuario['cpf'] ?></td>
-                        <td><?php echo $usuario['genero'] ?></td>
+                        <td class="botoes-container">
+                            <form action="editarUsuario.php" method="GET">
+                                <input type="hidden" name="id" value="<?= $usuario['id']; ?>">
+                                <button class="botao-salvar">
+                                        <span class="material-symbols-outlined">
+                                            room_preferences
+                                        </span>
+                                </button>
+                            </form>
+
+                            <form action="">
+                                <button class="botao-excluir">
+                                    <span class="material-symbols-outlined">
+                                        delete
+                                    </span>
+                                </button>
+                            </form>
+                        </td>
                     </tr>
                 <?php } ?>
             </tbody>

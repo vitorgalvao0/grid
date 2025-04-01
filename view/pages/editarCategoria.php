@@ -1,37 +1,40 @@
 <?php
-    require_once __DIR__ ."/../../model/CategoriaModel.php"; 
-
-
-    if(isset($_GET['id'])){
-        $modo = 'EDICAO';
-        $categoriaModel = new CategoriaModel();
-        $categoria = $categoriaModel->buscarPorId($_GET['id']);
-    } else{
-        $modo = 'CRIACAO';
-        $categoria = [
-            'id'=>'',
-            'nome'=>'',
-        ];
-    }
+ 
+require_once './../../model/CategoriaModel.php';
+ 
+if (isset($_GET['id'])) {
+    $modo = 'EDICAO';
+    $categoriaMOdel = new CategoriaModel();
+    $categorias = $categoriaMOdel->buscarPorId($_GET['id']);
+} else {
+    $modo = 'CRIACAO';
+    $categorias = [
+        'id'=> '',
+        'nome'=> '',
+    ];
+}
+ 
 ?>
-
-<!DOCTYPE html>
-<html lang="pt-BR">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Categoria</title>
-    <link rel="stylesheet" href="/vitorg/adm-site/view/assets/css/style.css">
-</head>
+ 
+<?php require_once './../components/head.php'; ?>
+ 
 <body>
-    <?php require_once __DIR__ . '\..\components\navbar.php'; ?>
-    <?php require_once __DIR__ . '\..\components\sidebar.php'; ?>
-
-    <main>
-        <p>oi</p>
+    <?php require_once './../components/navbar.php'; ?>
+    <?php require_once './../components/sidebar.php'; ?>
+    <main class="main-editarcategoria">
+        <form class="form-editacategoria" action="categorias.php">
+            <label class="form-label" for="nome">Nome</label>
+            <input class="form-input" type="text" id="nome" value="<?php echo $categorias['nome']; ?>">
+            <div class="form-btn">
+                <button class="btn btn-terciario">
+                    Cancelar
+                </button>
+                <button class="btn btn-secundario">
+                    Salvar
+                </button>
+            </div>
+        </form>
     </main>
-
-    <?php require_once __DIR__ . '\..\components\footer.php'; ?>
+    <?php require_once './../components/footer.php'; ?>
 </body>
 </html>

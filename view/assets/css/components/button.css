@@ -4,3 +4,10 @@
     padding: 5px;
     gap: 2px;
 }
+
+.botao-salvar{
+    background-color: rgb(75, 135, 210);
+}
+.botao-excluir{
+    background-color: rgb(226, 79, 79);
+}

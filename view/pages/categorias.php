@@ -5,15 +5,7 @@
     $categorias = $categoriaModel->listar();
 ?>
 
-<!DOCTYPE html>
-<html lang="pt-BR">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Categoria</title>
-    <link rel="stylesheet" href="/vitorg/adm-site/view/assets/css/style.css">
-</head>
+<?php require_once __DIR__ . '\..\components\head.php'; ?>
 <body>
     <?php require_once __DIR__ . '\..\components\navbar.php'; ?>
     <?php require_once __DIR__ . '\..\components\sidebar.php'; ?>
@@ -36,19 +28,22 @@
                         <td><?php echo $categoria['nome'] ?></td>
                         <td class="botoes-container">
                             <form action="editarCategoria.php" method="GET">
-                                <button class="botao">
+                                <input type="hidden" name="id" value="<?= $categoria['id']; ?>">
+                                <button class="botao-salvar">
                                         <span class="material-symbols-outlined">
                                             room_preferences
                                         </span>
                                 </button>
                             </form>
-                            <button class="botao">
-                                <span class="material-symbols-outlined">
-                                    delete
-                                </span>
-                            </button>
-                        </td>
-                            
+
+                            <form action="">
+                                <button class="botao-excluir">
+                                    <span class="material-symbols-outlined">
+                                        delete
+                                    </span>
+                                </button>
+                            </form>
+                        </td>    
                     </tr>
                 <?php } ?>
             </tbody>
