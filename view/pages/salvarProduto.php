@@ -1,18 +1,22 @@
 <?php
- require_once __DIR__ . './../../model/CategoriaModel.php';
+ require_once __DIR__ . './../../model/ProdutoModel.php';
  
  //  verificar se é metodo post 
 if ($_SERVER['REQUEST_METHOD'] === 'POST'){
 
-    $categoriaModel = new CategoriaModel();
+    $produtoModel = new ProdutoModel();
 
     if(empty($_POST['id'])){
         //criar
-        $sucesso = $categoriaModel->criar([
+        $sucesso = $produtoModel->criar([
             'nome' => $_POST['nome'],
+            'descricao' => $_POST['descricao'],
+            'preco' => $_POST['preco'],
+            'idcategoria' => $_POST['idcategoria'],
+
         ]);
     }else{
-        $sucesso = $categoriaModel->editar([
+        $sucesso = $produtoModel->editar([
             'id' => $_POST['id'],
             'nome' => $_POST['nome'],
         ]);

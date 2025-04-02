@@ -20,7 +20,8 @@ class ProdutoModel{
 
         return $stmt->fetchAll();
     }
-    public function buscarPorIdProduto($id){
+
+    public function buscarPorId($id){
         $query = "SELECT * FROM $this->tabela WHERE id = :id";
 
         $stmt = $this->conn->prepare($query);
@@ -28,7 +29,40 @@ class ProdutoModel{
         $stmt->execute();
 
         return $stmt->fetch();
+    }
 
+    public function criar($usuario){
+        $query = "INSERT INTO $this->tabela (nome,descricao,preco,idcategoria) VALUE (:nome,:descricao,:preco,:idcategoria)";
+
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(":nome", $usuario['nome']);
+        $stmt->bindParam(":descricao", $usuario['descricao']);
+        $stmt->bindParam(":preco", $usuario['preco']);
+        $stmt->bindParam(":idcategoria", $usuario['idcategoria']);
+        return $stmt->execute();
+    }
+
+    public function editar($usuario){
+        $query = "UPDATE $this->tabela SET nome = :nome, descricao = :descricao, preco = :preco, idcategoria = :idcategoria WHERE id = :id";
+
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(":id", $usuario['id']);
+        $stmt->bindParam(":nome", $usuario['nome']);
+        $stmt->bindParam(":descricao", $usuario['descricao']);
+        $stmt->bindParam(":preco", $usuario['preco']);
+        $stmt->bindParam(":idcategoria", $usuario['idcategoria']);
+
+        return $stmt->execute();
+    }
+
+    public function excluir($id){
+        $query = "DELETE FROM categoria WHERE id = :id";
+
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(":id", $id);
+        $stmt->execute();
+
+        return $stmt->rowCount() > 0;
     }
     
 }

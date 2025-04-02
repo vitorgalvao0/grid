@@ -12,6 +12,14 @@
     <main>
         <h1>Usuários</h1>
 
+        <form class="form-button-add" action="usuario.php" method="GET">
+                <button class="button-add" type="submit">
+                    <span class="material-symbols-outlined">
+                        add
+                    </span>
+                </button>
+        </form>
+        
         <table class="table">
             <thead>
                 <tr>
@@ -33,22 +41,24 @@
                         <td><?php echo $usuario['telefone'] ?></td>
                         <td><?php echo $usuario['datanascimento'] ?></td>
                         <td><?php echo $usuario['cpf'] ?></td>
+
                         <td class="botoes-container">
-                            <form action="editarUsuario.php" method="GET">
+                            <form action="usuario.php" method="GET">
                                 <input type="hidden" name="id" value="<?= $usuario['id']; ?>">
-                                <button class="botao-salvar">
-                                        <span class="material-symbols-outlined">
-                                            room_preferences
-                                        </span>
-                                </button>
+                                    <button class="botao-salvar">
+                                            <span class="material-symbols-outlined">
+                                                room_preferences
+                                            </span>
+                                    </button>
                             </form>
 
-                            <form action="">
-                                <button class="botao-excluir">
-                                    <span class="material-symbols-outlined">
-                                        delete
-                                    </span>
-                                </button>
+                            <form action="excluirUsuario.php" method="POST">
+                                <input type="hidden" name="id" value="<?= $usuario['id']; ?>">
+                                    <button class="botao-excluir">
+                                        <span class="material-symbols-outlined">
+                                            delete
+                                        </span>
+                                    </button>
                             </form>
                         </td>
                     </tr>

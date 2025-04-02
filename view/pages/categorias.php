@@ -13,10 +13,10 @@
     <main>
         <h1>Categoria</h1>
 
-        <form class="form-button-add" action="salvarCategoria.php" method="get">
-                <button class="button-add" type="submit" class="botao-excluir">
+        <form class="form-button-add" action="categoria.php" method="GET">
+                <button class="button-add" type="submit">
                     <span class="material-symbols-outlined">
-                        add novo
+                        add
                     </span>
                 </button>
         </form>
@@ -35,7 +35,7 @@
                         <td><?php echo $categoria['id'] ?></td>
                         <td><?php echo $categoria['nome'] ?></td>
                         <td class="botoes-container">
-                            <form action="editarCategoria.php" method="GET">
+                            <form action="categoria.php" method="GET">
                                 <input type="hidden" name="id" value="<?= $categoria['id']; ?>">
                                     <button class="botao-salvar">
                                             <span class="material-symbols-outlined">
@@ -44,7 +44,7 @@
                                     </button>
                             </form>
 
-                            <form action="excluirCategoria.php" method="POST" onsubmit="return confirm('Tem certeza que deseja excluir esta categoria?');">
+                            <form action="excluirCategoria.php" method="POST">
                                 <input type="hidden" name="id" value="<?= $categoria['id']; ?>"> 
                                     <button type="submit" class="botao-excluir">
                                         <span class="material-symbols-outlined">

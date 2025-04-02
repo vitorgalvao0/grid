@@ -32,12 +32,32 @@ class CategoriaModel{
         return $stmt->fetch();
     }
 
-    public function excluirCategoria($id){
+    public function criar($categoria){
+        $query = "INSERT INTO $this->tabela (nome) VALUE (:nome)";
+
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(":nome", $categoria['nome']);
+        return $stmt->execute();
+    }
+
+    public function editar($categoria){
+        $query = "UPDATE $this->tabela SET nome = :nome WHERE id = :id";
+
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(":id", $categoria['id']);
+        $stmt->bindParam(":nome", $categoria['nome']);
+
+        return $stmt->execute();
+    }
+
+    public function excluir($id){
         $query = "DELETE FROM categoria WHERE id = :id";
 
         $stmt = $this->conn->prepare($query);
         $stmt->bindParam(":id", $id);
         $stmt->execute();
+
+        return $stmt->rowCount() > 0;
     }
 }
 
