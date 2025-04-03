@@ -34,17 +34,17 @@ if (isset($_GET['id'])) {
             <label class="form-label" for="nome">Nome</label>
             <input class="form-input" type="text" name="nome" id="nome" placeholder="Nome do usuario" value="<?php  echo $usuarios['nome']; ?>">
 
-            <label class="form-label" for="nome">Email</label>
-            <input class="form-input" type="text" name="nome" id="nome" placeholder="Email do usuario" value="<?php  echo $usuarios['email']; ?>">
+            <label class="form-label" for="email">Email</label>
+            <input class="form-input" type="text" name="email" id="email" placeholder="Email do usuario" value="<?php  echo $usuarios['email']; ?>">
 
-            <label class="form-label" for="nome">Telefone</label>
-            <input class="form-input" type="text" name="nome" id="nome" placeholder="Telefone do usuario" value="<?php  echo $usuarios['telefone']; ?>">
+            <label class="form-label" for="telefone">Telefone</label>
+            <input class="form-input" type="text" name="telefone" id="telefone" placeholder="Telefone do usuario" value="<?php  echo $usuarios['telefone']; ?>">
 
-            <label class="form-label" for="nome">Data de nascimento</label>
-            <input class="form-input" type="text" name="nome" id="nome" placeholder="Informe a data de nascimento" value="<?php  echo $usuarios['datanascimento']; ?>">
+            <label class="form-label" for="datanascimento">Data de nascimento</label>
+            <input class="form-input" type="text" name="datanascimento" id="datanascimento" placeholder="Informe a data de nascimento" value="<?php  echo $usuarios['datanascimento']; ?>">
 
-            <label class="form-label" for="nome">CPF</label>
-            <input class="form-input" type="text" name="nome" id="nome" placeholder="Cpf do usuario" value="<?php  echo $usuarios['cpf']; ?>">
+            <label class="form-label" for="cpf">CPF</label>
+            <input class="form-input" type="text" name="cpf" id="cpf" placeholder="Cpf do usuario" value="<?php  echo $usuarios['cpf']; ?>">
 
             <div class="form-btn">
                 <button class="btn btn-terciario">

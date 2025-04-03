@@ -39,7 +39,8 @@
                         <td><?php echo $produto['nome'] ?></td>
                         <td><?php echo $produto['descricao'] ?></td>
                         <td><?php echo $produto['preco'] ?></td>
-                        <td><?php echo $produto['idcategoria'] ?></td>
+                        <td><?php echo $produto['catnome'] ?></td>
+
                         <td class="botoes-container">
                             <form action="produto.php" method="GET">
                                 <input type="hidden" name="id" value="<?= $produto['id']; ?>">

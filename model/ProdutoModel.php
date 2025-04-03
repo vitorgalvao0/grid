@@ -13,7 +13,7 @@ class ProdutoModel{
 
     public function listar() {
 
-        $query = "SELECT * FROM $this->tabela";
+        $query = "SELECT p.*, c.nome as catnome FROM $this->tabela p INNER JOIN categoria c ON p.idcategoria = c.id" ;
 
         $stmt = $this->conn->prepare($query);
         $stmt->execute();
@@ -31,32 +31,33 @@ class ProdutoModel{
         return $stmt->fetch();
     }
 
-    public function criar($usuario){
+    public function criar($produto){
         $query = "INSERT INTO $this->tabela (nome,descricao,preco,idcategoria) VALUE (:nome,:descricao,:preco,:idcategoria)";
 
         $stmt = $this->conn->prepare($query);
-        $stmt->bindParam(":nome", $usuario['nome']);
-        $stmt->bindParam(":descricao", $usuario['descricao']);
-        $stmt->bindParam(":preco", $usuario['preco']);
-        $stmt->bindParam(":idcategoria", $usuario['idcategoria']);
+        $stmt->bindParam(":nome", $produto['nome']);
+        $stmt->bindParam(":descricao", $produto['descricao']);
+        $stmt->bindParam(":preco", $produto['preco']);
+        $stmt->bindParam(":idcategoria", $produto['idcategoria']);
+
         return $stmt->execute();
     }
 
-    public function editar($usuario){
+    public function editar($produto){
         $query = "UPDATE $this->tabela SET nome = :nome, descricao = :descricao, preco = :preco, idcategoria = :idcategoria WHERE id = :id";
 
         $stmt = $this->conn->prepare($query);
-        $stmt->bindParam(":id", $usuario['id']);
-        $stmt->bindParam(":nome", $usuario['nome']);
-        $stmt->bindParam(":descricao", $usuario['descricao']);
-        $stmt->bindParam(":preco", $usuario['preco']);
-        $stmt->bindParam(":idcategoria", $usuario['idcategoria']);
+        $stmt->bindParam(":id", $produto['id']);
+        $stmt->bindParam(":nome", $produto['nome']);
+        $stmt->bindParam(":descricao", $produto['descricao']);
+        $stmt->bindParam(":preco", $produto['preco']);
+        $stmt->bindParam(":idcategoria", $produto['idcategoria']);
 
         return $stmt->execute();
     }
 
     public function excluir($id){
-        $query = "DELETE FROM categoria WHERE id = :id";
+        $query = "DELETE FROM produto WHERE id = :id";
 
         $stmt = $this->conn->prepare($query);
         $stmt->bindParam(":id", $id);

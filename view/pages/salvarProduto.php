@@ -13,12 +13,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
             'descricao' => $_POST['descricao'],
             'preco' => $_POST['preco'],
             'idcategoria' => $_POST['idcategoria'],
-
         ]);
     }else{
         $sucesso = $produtoModel->editar([
             'id' => $_POST['id'],
             'nome' => $_POST['nome'],
+            'descricao' => $_POST['descricao'],
+            'preco' => $_POST['preco'],
+            'idcategoria' => $_POST['idcategoria'],
         ]);
     }
     
@@ -27,6 +29,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
     }
     
 }
-return header('Location: categorias.php');
+return header('Location: produtos.php');
 
 ?>

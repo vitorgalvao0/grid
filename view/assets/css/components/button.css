@@ -14,8 +14,8 @@
 
 .form-button-add{
     display: flex;
-    justify-content: space-around;
-    padding: 5px;
+    justify-content: flex-start;
+    margin: 10px 0px 10px 65px;
 }
 .button-add{
     background-color: rgb(104, 223, 153);

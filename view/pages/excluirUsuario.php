@@ -1,14 +1,14 @@
 <?php
 
-require_once './../../model/ProdutoModel.php';
+require_once './../../model/UsuarioModel.php';
  
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $id = ["id"];
  
     if (!empty($id)) {
-        $produtoModel = new ProdutoModel();
-        $produtoModel->excluir($_POST['id']);
+        $usuarioModel = new UsuarioModel();
+        $usuarioModel->excluir($_POST['id']);
     }
 }
  
-return header("Location: produtos.php");
+return header("Location: usuarios.php");

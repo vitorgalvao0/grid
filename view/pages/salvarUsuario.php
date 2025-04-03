@@ -18,6 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
         ]);
     }else{
         $sucesso = $usuarioModel->editar([
+            'id' => $_POST['id'],
             'nome' => $_POST['nome'],
             'email' => $_POST['email'],
             'telefone' => $_POST['telefone'],
@@ -31,5 +32,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
     }
     
 }
-return header('Location: produtos.php');
+return header('Location: usuarios.php');
 

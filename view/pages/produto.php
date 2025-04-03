@@ -1,7 +1,10 @@
 <?php
  
 require_once './../../model/ProdutoModel.php';
- 
+require_once './../../model/CategoriaModel.php';
+$categoriaModel = new CategoriaModel();
+$categorias = $categoriaModel->listar();
+
 if (isset($_GET['id'])) {
     $modo = 'EDICAO';
     $produtoModel = new ProdutoModel();
@@ -33,14 +36,23 @@ if (isset($_GET['id'])) {
             <label class="form-label" for="nome">Nome</label>
             <input class="form-input" type="text" name="nome" id="nome" placeholder="Nome do produto" value="<?php  echo $produtos['nome']; ?>">
 
-            <label class="form-label" for="nome">Descricao</label>
-            <input class="form-input" type="text" name="nome" id="nome" placeholder="Descricao do seu produto" value="<?php  echo $produtos['descricao']; ?>">
+            <label class="form-label" for="descricao">Descricao</label>
+            <input class="form-input" type="text" name="descricao" id="descricao" placeholder="Descricao do seu produto" value="<?php  echo $produtos['descricao']; ?>">
 
-            <label class="form-label" for="nome">Preco</label>
-            <input class="form-input" type="text" name="nome" id="nome" placeholder="Preco do seu produto" value="<?php  echo $produtos['preco']; ?>">
+            <label class="form-label" for="preco">Preco</label>
+            <input class="form-input" type="text" name="preco" id="preco" placeholder="Preco do seu produto" value="<?php  echo $produtos['preco']; ?>">
 
-            <label class="form-label" for="nome">Categoria</label>
-            <input class="form-input" type="text" name="nome" id="nome" placeholder="Qual a categoria do seu produto" value="<?php  echo $produtos['idcategoria']; ?>">
+            <label class="form-label" for="id_categoria">Categoria</label>
+            <select class="form-input" id="id_categoria" name="idcategoria">
+                <option value="">Selecione uma Categoria</option>
+                <?php foreach ($categorias as $categoria) { ?>
+                    <option value="<?php echo $categoria['id']; ?>"
+                        <?php echo ($produtos['idcategoria'] == $categoria['id']) ? 'selected' : ''; ?>>
+                        <?php echo $categoria['nome']; ?>
+                    </option>
+                <?php } ?>
+            </select>
+            
 
             <div class="form-btn">
                 <button class="btn btn-terciario">
