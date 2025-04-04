@@ -27,30 +27,30 @@ if (isset($_GET['id'])) {
     <?php require_once './../components/navbar.php'; ?>
     <?php require_once './../components/sidebar.php'; ?>
 
-    <main class="main-editarcategoria">
-        <form class="form-editacategoria" action="salvarUsuario.php" method="POST">
+    <main class="main-form">
+        <form class="form-editar" action="salvarUsuario.php" method="POST">
             <input type="hidden" name="id" value="<?=  $usuarios['id']; ?>">
 
             <label class="form-label" for="nome">Nome</label>
-            <input class="form-input" type="text" name="nome" id="nome" placeholder="Nome do usuario" value="<?php  echo $usuarios['nome']; ?>">
+            <input class="form-input" type="text" name="nome" id="nome" placeholder="Nome do usuario" value="<?php  echo $usuarios['nome']; ?>"required>
 
             <label class="form-label" for="email">Email</label>
-            <input class="form-input" type="text" name="email" id="email" placeholder="Email do usuario" value="<?php  echo $usuarios['email']; ?>">
+            <input class="form-input" type="text" name="email" id="email" placeholder="Email do usuario" value="<?php  echo $usuarios['email']; ?>"required>
 
             <label class="form-label" for="telefone">Telefone</label>
-            <input class="form-input" type="text" name="telefone" id="telefone" placeholder="Telefone do usuario" value="<?php  echo $usuarios['telefone']; ?>">
+            <input class="form-input" type="text" name="telefone" id="telefone" placeholder="Telefone do usuario" value="<?php  echo $usuarios['telefone']; ?>"required>
 
             <label class="form-label" for="datanascimento">Data de nascimento</label>
-            <input class="form-input" type="text" name="datanascimento" id="datanascimento" placeholder="Informe a data de nascimento" value="<?php  echo $usuarios['datanascimento']; ?>">
+            <input class="form-input" type="text" name="datanascimento" id="datanascimento" placeholder="Informe a data de nascimento" value="<?php  echo $usuarios['datanascimento']; ?>"required>
 
             <label class="form-label" for="cpf">CPF</label>
-            <input class="form-input" type="text" name="cpf" id="cpf" placeholder="Cpf do usuario" value="<?php  echo $usuarios['cpf']; ?>">
+            <input class="form-input" type="text" name="cpf" id="cpf" placeholder="Cpf do usuario" value="<?php  echo $usuarios['cpf']; ?>"required>
 
             <div class="form-btn">
-                <button class="btn btn-terciario">
+                <button class="cancelar">
                     Cancelar
                 </button>
-                <button class="btn btn-secundario">
+                <button class="salvar">
                     Salvar
                 </button>
             </div>

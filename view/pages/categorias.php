@@ -16,7 +16,7 @@
         <form class="form-button-add" action="categoria.php" method="GET">
                 <button class="button-add" type="submit">
                     <span class="material-symbols-outlined">
-                        add
+                        shadow_add
                     </span>
                 </button>
         </form>
@@ -39,7 +39,7 @@
                                 <input type="hidden" name="id" value="<?= $categoria['id']; ?>">
                                     <button class="botao-salvar">
                                             <span class="material-symbols-outlined">
-                                                room_preferences
+                                                edit_square
                                             </span>
                                     </button>
                             </form>
@@ -48,7 +48,7 @@
                                 <input type="hidden" name="id" value="<?= $categoria['id']; ?>"> 
                                     <button type="submit" class="botao-excluir">
                                         <span class="material-symbols-outlined">
-                                            delete
+                                            delete_forever
                                         </span>
                                     </button>
                             </form>

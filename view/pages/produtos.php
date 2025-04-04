@@ -16,7 +16,7 @@
        <form class="form-button-add" action="produto.php" method="GET">
                 <button class="button-add" type="submit" >
                     <span class="material-symbols-outlined">
-                        add
+                        box_add
                     </span>
                 </button>
         </form>
@@ -46,7 +46,7 @@
                                 <input type="hidden" name="id" value="<?= $produto['id']; ?>">
                                     <button class="botao-salvar">
                                             <span class="material-symbols-outlined">
-                                                room_preferences
+                                                box_edit
                                             </span>
                                     </button>
                             </form>
@@ -55,7 +55,7 @@
                                 <input type="hidden" name="id" value="<?= $produto['id']; ?>">
                                     <button class="botao-excluir">
                                         <span class="material-symbols-outlined">
-                                            delete
+                                            delete_forever
                                         </span>
                                     </button>
                             </form>
@@ -63,6 +63,7 @@
                     </tr>
                 <?php } ?>
     </main>
+    
+    <?php require_once __DIR__ . '\..\components\footer.php'; ?>
 </body>
-    <?php require_once __DIR__ . '.\..\components\footer.php'; ?>
 </html>

@@ -29,21 +29,21 @@ if (isset($_GET['id'])) {
     <?php require_once './../components/navbar.php'; ?>
     <?php require_once './../components/sidebar.php'; ?>
 
-    <main class="main-editarcategoria">
-        <form class="form-editacategoria" action="salvarProduto.php" method="POST">
+    <main class="main-form">
+        <form class="form-editar" action="salvarProduto.php" method="POST">
             <input type="hidden" name="id" value="<?=  $produtos['id']; ?>">
 
             <label class="form-label" for="nome">Nome</label>
-            <input class="form-input" type="text" name="nome" id="nome" placeholder="Nome do produto" value="<?php  echo $produtos['nome']; ?>">
+            <input class="form-input" type="text" name="nome" id="nome" placeholder="Nome do produto" value="<?php  echo $produtos['nome']; ?>" required>
 
             <label class="form-label" for="descricao">Descricao</label>
-            <input class="form-input" type="text" name="descricao" id="descricao" placeholder="Descricao do seu produto" value="<?php  echo $produtos['descricao']; ?>">
+            <input class="form-input" type="text" name="descricao" id="descricao" placeholder="Descricao do seu produto" value="<?php  echo $produtos['descricao']; ?>" required>
 
             <label class="form-label" for="preco">Preco</label>
-            <input class="form-input" type="text" name="preco" id="preco" placeholder="Preco do seu produto" value="<?php  echo $produtos['preco']; ?>">
+            <input class="form-input" type="text" name="preco" id="preco" placeholder="Preco do seu produto" value="<?php  echo $produtos['preco']; ?>" required>
 
             <label class="form-label" for="id_categoria">Categoria</label>
-            <select class="form-input" id="id_categoria" name="idcategoria">
+            <select class="form-input" id="id_categoria" name="idcategoria" required> 
                 <option value="">Selecione uma Categoria</option>
                 <?php foreach ($categorias as $categoria) { ?>
                     <option value="<?php echo $categoria['id']; ?>"
@@ -55,10 +55,10 @@ if (isset($_GET['id'])) {
             
 
             <div class="form-btn">
-                <button class="btn btn-terciario">
+                <button class="cancelar">
                     Cancelar
                 </button>
-                <button class="btn btn-secundario">
+                <button class="salvar">
                     Salvar
                 </button>
             </div>
